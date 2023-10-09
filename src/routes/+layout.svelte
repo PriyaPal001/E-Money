@@ -10,11 +10,11 @@
 
 	let nav = {
 		title: 'Svelte Tailwinds',
-		img: 'https://cdn-icons-png.flaticon.com/256/4193/4193288.png',
+		img: 'https://cdn-icons-png.flaticon.com/128/10238/10238346.png',
 		listnavs: [
 			{
 				name: 'Home',
-				link: '/',
+				link: '/homee',
 				icon: Home,
 				color: '#bee9e8'
 			},
@@ -27,6 +27,11 @@
 				name: 'Post',
 				link: '/post',
 				icon: PlusSquare
+			},
+			{
+				name: 'Profile',
+				link: '/profile',
+				icon: User
 			}
 		]
 	};
@@ -98,13 +103,13 @@
 					<nav class="flex flex-1 flex-col">
 						<ul role="list" class="flex flex-1 flex-col gap-y-7">
 							<li>
-								<ul role="list" class="-mx-2 space-y-1">
+								<ul role="list" class="-mx-2 space-y-1 ">
 									{#each nav.listnavs as item}
 										<li>
 											<!-- Current: "bg-gray-50 text-indigo-600", Default: "text-gray-700 hover:text-indigo-600 hover:bg-gray-50" -->
 											<a
 												href={item.link}
-												class="bg-gray-50 text-indigo-600 group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold"
+												class="bg-gray-50 text-indigo-600 group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold hover:translate-x-1 transition-all duration-150"
 												on:click={()=>{isMenu=false}}
 											>
 												<svelte:component this={item.icon} size="20" strokeWidth="1.3" />
@@ -181,7 +186,7 @@
 								{#each nav.listnavs as items}
 									<a
 										href={items.link}
-										class=" text-[#bee9e8] group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold hover:text-white hover:bg-gray-800"
+										class=" text-[#bee9e8] group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold hover:text-white hover:bg-gray-800 hover:translate-x-1 transition-all duration-150"
 									>
 										<svelte:component
 											this={items.icon}
@@ -197,8 +202,8 @@
 					</li>
 
 					<li class="-mx-6 mt-auto ">
-						<a
-							href="#"
+						<div
+							
 							class="flex items-center gap-x-4 px-6 py-3 text-sm font-semibold leading-6 text-gray-900 "
 						>
 							<!-- <img
@@ -210,14 +215,11 @@
 
 							<div>
 								{#if data.email}
-									<form method="POST" action="?/logout" use:enhance>
-										<!-- <Button  size=lg type="submit" >
+									<form method="POST" action="./?/logout" use:enhance>
+										<Button  size=lg type="submit" >
 											<User size="18" class="mr-1" strokeWidth="2" />
 											Log Out</Button
-										> -->
-										<button type="submit" class="text-white">
-											Logout
-										</button>
+										>
 									</form>
 								{:else}
 									<Button href="/login">
@@ -226,7 +228,7 @@
 									>
 								{/if}
 							</div>
-						</a>
+						</div>
 					</li>
 				</ul>
 			</nav>
@@ -264,7 +266,7 @@
 		</a>
 	</div>
 
-	<main class="lg:pl-72 bg-[#202020] h-screen">
+	<main class="lg:pl-72 bg-[#202020] h-full">
 		<div class="xl:pr-96">
 			<div class="px-4 py-10 sm:px-6 lg:px-8 lg:py-6">
 				<!-- Main area -->
@@ -283,7 +285,7 @@
 					<!-- Current: "bg-gray-50 text-indigo-600", Default: "text-gray-700 hover:text-indigo-600 hover:bg-gray-50" -->
 					<a
 						href="#"
-						class="text-gray-700 hover:text-white hover:bg-gray-800 group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold"
+						class="text-gray-700 hover:text-white hover:bg-gray-800 group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold hover:translate-x-1 transition-all duration-150"
 					>
 						<span
 							class="flex h-6 w-6 shrink-0 items-center justify-center rounded-lg border text-[0.625rem] font-medium bg-white text-gray-400 border-gray-200 group-hover:border-indigo-600 group-hover:text-indigo-600"
@@ -295,7 +297,7 @@
 				<li>
 					<a
 						href="#"
-						class="text-gray-700 hover:text-white hover:bg-gray-800 group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold"
+						class="text-gray-700 hover:text-white hover:bg-gray-800 group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold hover:translate-x-1 transition-all duration-150"
 					>
 						<span
 							class="flex h-6 w-6 shrink-0 items-center justify-center rounded-lg border text-[0.625rem] font-medium bg-white text-gray-400 border-gray-200 group-hover:border-indigo-600 group-hover:text-indigo-600"
@@ -307,7 +309,7 @@
 				<li>
 					<a
 						href="#"
-						class="text-gray-700 hover:text-white hover:bg-gray-800 group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold"
+						class="text-gray-700 hover:text-white hover:bg-gray-800 group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold hover:translate-x-1 transition-all duration-150"
 					>
 						<span
 							class="flex h-6 w-6 shrink-0 items-center justify-center rounded-lg border text-[0.625rem] font-medium bg-white text-gray-400 border-gray-200 group-hover:border-indigo-600 group-hover:text-indigo-600"
